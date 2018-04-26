@@ -8,9 +8,19 @@ class LoggerConsole {
       level: 'info',
       ...options
     };
+    if(!this.options.manualInit) {
+      this.init();
+    }
   }
   
   async init() {
+    if(this._alreadyInitialized) return true;
+  
+    this._alreadyInitialized = true;
+    
+    if(typeof this.options.onInitCompleted === 'function') {
+      this.options.onInitCompleted(this);
+    }
     return true;
   }
   

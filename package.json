@@ -1,6 +1,6 @@
 {
   "name": "@goldix.org/logger-console",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Logging to console. This is base class for other loggers.",
   "main": "index.js",
   "scripts": {
