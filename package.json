@@ -1,0 +1,25 @@
+{
+  "name": "@goldix.org/logger-console",
+  "version": "0.0.1",
+  "description": "Logging to console. This is base class for other loggers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/demchenkoe/goldix.org-logger-console.git"
+  },
+  "keywords": [
+    "goldix.org",
+    "console",
+    "log",
+    "wrapper"
+  ],
+  "author": "Eugene Demchenko <demchenkoev@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/demchenkoe/goldix.org-logger-console/issues"
+  },
+  "homepage": "https://github.com/demchenkoe/goldix.org-logger-console#readme"
+}
