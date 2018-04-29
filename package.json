@@ -1,6 +1,6 @@
 {
   "name": "@goldix.org/logger-console",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Logging to console. This is base class for other loggers.",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/demchenkoe/goldix.org-logger-console#readme",
   "dependencies": {
-    "@goldix.org/logger-proxy": "0.0.1"
+    "@goldix.org/logger-proxy": "0.0.2"
   }
 }
