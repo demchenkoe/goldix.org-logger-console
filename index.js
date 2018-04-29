@@ -1,13 +1,13 @@
 
-const {Profiler} = require('@goldix.org/profiler');
+const {LoggerProxy} = require('@goldix.org/logger-proxy');
 
-class LoggerConsole {
+class LoggerConsole extends LoggerProxy {
   
   constructor(options) {
-    this.options = {
+    super(null, {
       level: 'info',
       ...options
-    };
+    });
     if(!this.options.manualInit) {
       this.init();
     }
@@ -128,50 +128,7 @@ class LoggerConsole {
     }
     return await this._writeMessage(transformedMessage);
   }
-  
-  log(message, payload, options) {
-    return this._log('log', message, payload, options);
-  }
-  
-  info(message, payload, options) {
-    return this._log('info', message, payload, options);
-  }
-  
-  warn(message, payload, options) {
-    return this._log('warn', message, payload, options);
-  }
-  
-  error(message, payload, options) {
-    return this._log('error', message, payload, options);
-  }
-  
-  debug(message, payload, options) {
-    return this._log('debug', message, payload, options);
-  }
-  
-  getProfiler({options} = {}) {
-    return (options && options.Profiler) ||  Profiler;
-  }
-  
-  start(message, payload, options) {
-    
-    options = {...this.profilerOptions, options};
-    let Profiler = this.getProfiler(options);
-    
-    return new Profiler({
-      onProfilerEnd: (duration, profiler, endArguments) => {
-        let [message2, payload2, options2] = endArguments || [];
-        return this._log(
-          'profiler',
-          message2 || message,
-          {...payload, ...payload2, duration},
-          {...options, options2, profiler }
-        );
-      },
-      
-    });
-  }
 }
 
 
-module.exports = { LoggerConsole };
+module.exports = { LoggerConsole, LoggerProxy };
